@@ -1,0 +1,37 @@
+--- a/Makefile	2024-05-06 23:23:58.000000000 +0800
++++ b/Makefile	2024-11-05 17:26:40.163677060 +0800
+@@ -42,7 +42,7 @@
+ ########################## Features ###########################
+ CONFIG_MP_INCLUDED = n
+-CONFIG_CONCURRENT_MODE = n
++CONFIG_CONCURRENT_MODE = y
+ CONFIG_POWER_SAVING = n
+ CONFIG_POWER_SAVE = n
+ CONFIG_IPS_MODE = default
+ CONFIG_LPS_MODE = default
+@@ -111,13 +111,13 @@
+ endif
+ 
+ ########################## Debug ###########################
+-CONFIG_RTW_DEBUG = 0
++CONFIG_RTW_DEBUG = y
+ # default log level is _DRV_WARNING_ = 3,
+ # please refer to "How_to_set_driver_debug_log_level.doc" to set the available level.
+-CONFIG_RTW_LOG_LEVEL = 3
++CONFIG_RTW_LOG_LEVEL = 5
+ 
+ # enable /proc/net/rtlxxxx/ debug interfaces
+-CONFIG_PROC_DEBUG = n
++CONFIG_PROC_DEBUG = y
+ 
+ ######################## Wake On Lan ##########################
+ CONFIG_WOWLAN = n
+@@ -149,7 +149,7 @@
+ CONFIG_ROAMING_FLAG = 0x3
+ 
+ ###################### Platform Related #######################
+-CONFIG_PLATFORM_I386_PC = y
++CONFIG_PLATFORM_I386_PC = n
+ CONFIG_PLATFORM_RTL8198D = n
+ CONFIG_PLATFORM_ANDROID_X86 = n
+ CONFIG_PLATFORM_ANDROID_INTEL_X86 = n

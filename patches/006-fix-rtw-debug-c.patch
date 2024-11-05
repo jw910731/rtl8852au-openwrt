@@ -1,0 +1,38 @@
+--- a/core/rtw_debug.c	2024-11-05 17:29:51.202112571 +0800
++++ b/core/rtw_debug.c.new	2024-11-05 17:30:39.936733204 +0800
+@@ -646,7 +646,7 @@
+ 
+ }
+ 
+-static ssize_t proc_set_write_reg(struct file *file, const char __user *buffer, size_t count, loff_t *pos, void *data)
++ssize_t proc_set_write_reg(struct file *file, const char __user *buffer, size_t count, loff_t *pos, void *data)
+ {
+ 	struct net_device *dev = data;
+ 	_adapter *padapter = (_adapter *)rtw_netdev_priv(dev);
+@@ -696,7 +696,7 @@
+ static u32 proc_get_read_addr = 0xeeeeeeee;
+ static u32 proc_get_read_len = 0x4;
+ 
+-static int proc_get_read_reg(struct seq_file *m, void *v)
++int proc_get_read_reg(struct seq_file *m, void *v)
+ {
+ 	struct net_device *dev = m->private;
+ 	_adapter *padapter = (_adapter *)rtw_netdev_priv(dev);
+@@ -728,7 +728,7 @@
+ 	return 0;
+ }
+ 
+-static ssize_t proc_set_read_reg(struct file *file, const char __user *buffer, size_t count, loff_t *pos, void *data)
++ssize_t proc_set_read_reg(struct file *file, const char __user *buffer, size_t count, loff_t *pos, void *data)
+ {
+ 	char tmp[16];
+ 	u32 addr, len;
+@@ -761,7 +761,7 @@
+ 
+ }
+ 
+-static ssize_t proc_set_mac_dbg_status_dump(struct file *file, const char __user *buffer, size_t count, loff_t *pos, void *data)
++ssize_t proc_set_mac_dbg_status_dump(struct file *file, const char __user *buffer, size_t count, loff_t *pos, void *data)
+ {
+ 	struct net_device *dev = data;
+ 	_adapter *padapter = (_adapter *)rtw_netdev_priv(dev);
